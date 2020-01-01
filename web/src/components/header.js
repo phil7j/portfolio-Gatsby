@@ -1,34 +1,78 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import styled from "styled-components"
+
+const Container = styled.div`
+      /* display: flex; */
+      margin-bottom: 1.45rem;
+      height: 70px;
+`
+
+const Inner = styled.div`
+      display: flex;
+      justify-content: flex-end;
+      margin: 0 auto;
+      max-width: 960;
+      height: 100%;
+
+
+`
+const NavItem = styled.div`
+      height: 100%;
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      transition: all 0.5s ease;
+      a {
+        font-family: "Glacial Regular", sans-serif;
+        font-size: 30px;
+        text-decoration: none;
+        color: white;
+        padding: 20px 20px;
+        transition: all 0.8s ease;
+        &:hover {
+          color: black;
+        }
+        }
+      &:hover {
+        background: white;
+      }
+`
 
 const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
+  <Container>
+    <Inner>
+      <NavItem>
         <Link
           to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
         >
-          {siteTitle}
+          Home
         </Link>
-      </h1>
-    </div>
-  </header>
+      </NavItem>
+      <NavItem>
+        <Link
+          to="/about"
+        >
+          About
+        </Link>
+      </NavItem>
+      <NavItem>
+        <Link
+          to="/projects"
+        >
+          Projects
+        </Link>
+      </NavItem>
+      <NavItem>
+        <Link
+          to="/contact"
+        >
+          Contact
+        </Link>
+      </NavItem>
+    </Inner>
+  </Container>
 )
 
 Header.propTypes = {

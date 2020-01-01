@@ -2,12 +2,21 @@ html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  background: black;
+
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
+
+@font-face {
+  font-family: "Glacial Regular";
+  src: url("../fonts/GlacialIndifference-Bold.otf");
+}
+
 article,
 aside,
 details,
@@ -199,7 +208,7 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
+  color: white;
   font-family: georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
