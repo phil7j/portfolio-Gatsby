@@ -1,14 +1,19 @@
-import { Link } from "gatsby"
-import React from "react"
+import React, {useState} from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import MenuIcon from '@material-ui/icons/Menu';
 
-
-const Header = () => (
-  <>
-  <Container>
-    <Inner>
-      <NavItem>
+const MobileMenu = () => {
+    let [open, setOpen] = useState(false)
+    return (
+        <>
+        <NavItem>
+        <Hamburger />
+        </NavItem>
+        <MobileNav open={open} onClick={()=> {
+            console.log("Open state is", open)
+            return setOpen(true)}}>
+        {/* <NavItem>
         <Link
           to="/"
         >
@@ -35,27 +40,23 @@ const Header = () => (
         >
           Contact
         </Link>
-      </NavItem>
-    </Inner>
-  </Container>
-  </>
+      </NavItem> */}
+        </MobileNav>
+        </>
 )
+}
 
-const Container = styled.div`
-      /* display: flex; */
-      margin-bottom: 1.45rem;
-      height: 70px;
+const MobileNav = styled.div.attrs(props => ({
+    background: props.open ? "yellow" : "red",
+  }))`
+  width: 100vw;
+  height: 100vh;
+  /* background: orange; */
+  z-index: 10;
+  position: absolute;
+  /* top: 0; */
 `
 
-const Inner = styled.div`
-      display: flex;
-      justify-content: flex-end;
-      margin: 0 auto;
-      max-width: 960;
-      height: 100%;
-
-
-`
 const NavItem = styled.div`
       height: 100%;
       display: flex;
@@ -80,6 +81,17 @@ const NavItem = styled.div`
       }
 `
 
+const Hamburger = styled(MenuIcon)`
+  display: none;
+  font-size: 50px;
+  margin: 10px;
+  &:hover {
+    color: black;
+  }
+  @media (max-width: 600px) {
+        display: block;
 
+  }
+`
 
-export default Header
+export default MobileMenu
