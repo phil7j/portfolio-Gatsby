@@ -14,7 +14,7 @@ const Header = () => {
   <>
   <Container>
     <Hamburger open={open} onClick={()=>setOpen(!open)} />
-    <Inner open={open}>
+    <Menu open={open}>
 
 
       <NavItem>
@@ -49,7 +49,7 @@ const Header = () => {
           Contact
         </Link>
       </NavItem>
-    </Inner>
+    </Menu>
   </Container>
   </>
 )}
@@ -81,7 +81,7 @@ const Container = styled.div`
       z-index: 100;
 `
 
-const Inner = styled.div`
+const Menu = styled.div`
       display: flex;
       justify-content: flex-end;
       /* margin: 0 auto; */
@@ -112,12 +112,12 @@ const NavItem = styled.div`
       /* transition: all 0.5s ease; */
 
       a {
-        font-family: "Glacial Regular", sans-serif;
+        font-family: "Open Sans Regular", sans-serif;
         font-size: 25px;
         text-decoration: none;
         color: white;
         padding: 20px 20px;
-        transition: all 0.8s ease;
+        transition: background 0.8s ease, color 0.8s ease;
         /* &:hover {
           color: black;
         } */

@@ -5,13 +5,14 @@ html {
   background: black;
   overflow: hidden;
   overflow-y: hidden;
+  height: 100%;
 
 }
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
+  height: 100%;
 }
 
 /* Hide Scroll Bar */
@@ -22,6 +23,18 @@ body {
 @font-face {
   font-family: "Glacial Regular";
   src: url("../fonts/GlacialIndifference-Regular.otf");
+}
+@font-face {
+  font-family: "Open Sans Regular";
+  src: url("../fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: "Open Sans Light";
+  src: url("../fonts/OpenSans-Light.ttf");
+}
+@font-face {
+  font-family: "Open Sans Bold";
+  src: url("../fonts/OpenSans-Bold.ttf");
 }
 
 article,
