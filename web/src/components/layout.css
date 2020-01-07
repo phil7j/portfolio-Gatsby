@@ -3,6 +3,8 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   background: black;
+  overflow: hidden;
+  overflow-y: hidden;
 
 }
 body {
@@ -10,6 +12,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+}
+
+/* Hide Scroll Bar */
+::-webkit-scrollbar {
+  display: none;
 }
 
 @font-face {
