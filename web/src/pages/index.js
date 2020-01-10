@@ -37,7 +37,7 @@ margin: 10rem;
 @media (max-width: 970px) {
   flex-direction: column;
   margin: 0;
-  margin-top: 5rem;
+  margin-top: 15%;
   }
 `
 
@@ -100,10 +100,18 @@ const Headline = styled.div`
      }
    }
  }
+ @media (max-width: 970px) {
+
+  margin-top: 35px;
+  }
  @media (max-width: 600px) {
   /* margin-top: 20px; */
   width: 100%;
   }
+  @media (max-width: 400px) {
+
+margin-top: 15px;
+}
 `
 const ArrowIcon = styled(PlayArrowIcon)`
 color: black;

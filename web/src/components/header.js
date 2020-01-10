@@ -67,8 +67,13 @@ const Hamburger = styled(MenuIcon)`
     color: black;
     background: white;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 1024px) {
         display: block;
+        font-size: 70px;
+
+  }
+  @media (max-width: 600px) {
+
 
   }
 `
@@ -90,9 +95,9 @@ const Menu = styled.div`
       opacity: 1;
       /* border: ${props => props.open ? "4px solid green" : "4px solid red"}; */
       transition: background 0.5s linear, color 0.5s linear;
-      @media (max-width: 600px) {
+      @media (max-width: 1024px) {
         transition: right 0.3s linear;
-        position: absolute;
+        position: fixed;
         /* display: ${props => props.open ? "flex" : "none"}; */
         right: ${props => props.open ? "0" : "-900px"};
         /* opacity: ${props => props.open ? "1" : "0"}; */
