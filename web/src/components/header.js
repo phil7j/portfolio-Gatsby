@@ -1,8 +1,7 @@
-import { Link } from "gatsby"
 import React, {useState, useEffect} from "react"
 import styled from "styled-components"
 import MenuIcon from '@material-ui/icons/Menu';
-
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 
 const Header = () => {
@@ -15,39 +14,53 @@ const Header = () => {
   <Container>
     <Hamburger open={open} onClick={()=>setOpen(!open)} />
     <Menu open={open}>
-
-
       <NavItem>
-        <Link
-          onClick={()=>setOpen(false)}
+        <AniLink
+          cover
+          duration={.7}
+          bg="#2d2d2d"
+          direction="down"
           to="/"
+          onClick={()=>setOpen(false)}
         >
           Home
-        </Link>
+        </AniLink>
       </NavItem>
       <NavItem>
-        <Link
-          onClick={()=>setOpen(false)}
+        <AniLink
+          cover
+          duration={.7}
+          bg="#2d2d2d"
+          direction="down"
           to="/about"
+          onClick={()=>setOpen(false)}
         >
           About
-        </Link>
+        </AniLink>
       </NavItem>
       <NavItem>
-        <Link
+        <AniLink
+          cover
+          duration={.7}
+          bg="#2d2d2d"
+          direction="down"
           to="/projects"
           onClick={()=>setOpen(false)}
         >
           Projects
-        </Link>
+        </AniLink>
       </NavItem>
       <NavItem>
-        <Link
+        <AniLink
+          cover
+          duration={.7}
+          bg="#2d2d2d"
+          direction="down"
           to="/contact"
           onClick={()=>setOpen(false)}
         >
           Contact
-        </Link>
+        </AniLink>
       </NavItem>
     </Menu>
   </Container>
@@ -99,7 +112,7 @@ const Menu = styled.div`
         transition: right 0.3s linear;
         position: fixed;
         /* display: ${props => props.open ? "flex" : "none"}; */
-        right: ${props => props.open ? "0" : "-900px"};
+        right: ${props => props.open ? "0" : "-1300px"};
         /* opacity: ${props => props.open ? "1" : "0"}; */
         background: black;
         flex-direction: column;
@@ -126,14 +139,14 @@ const NavItem = styled.div`
         /* &:hover {
           color: black;
         } */
-        @media (max-width: 600px) {
+        @media (max-width: 1024px) {
         /* width: 100%; */
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
         width: 100%;
-        padding: 10%;
+        /* padding: 10%; */
 
   }
         }
@@ -143,9 +156,9 @@ const NavItem = styled.div`
           color: black;
         }
       }
-      @media (max-width: 600px) {
+      @media (max-width: 1024px) {
         width: 100%;
-        justify-content: center;
+        /* justify-content: center; */
       }
 `
 
