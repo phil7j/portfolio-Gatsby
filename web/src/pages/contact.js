@@ -1,16 +1,13 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 import SEO from "../components/seo"
 
-const SecondPage = () => (
+const Contact = () => (
   <>
-    <SEO title="Page two" />
-    <h1>Hi from the second page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <SEO title="Contact" />
+    <h1 style={{textAlign: "center", marginTop: "80px"}}>Coming Soon...</h1>
+    <AniLink cover duration={0.7} bg="#2d2d2d" direction="down" style={{display: "block", textAlign: "center", marginTop: "80px"}} to="/">Go back to the homepage</AniLink>
   </>
 )
 
-export default SecondPage
+export default Contact
