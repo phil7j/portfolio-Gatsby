@@ -100,8 +100,8 @@ const SecondPage = () => {
           <Img
             fluid={data.file.childImageSharp.fluid}
             alt="Me hiking through the Swiss Alps"
-            loading="eager"
-            durationFadeIn={200}
+            // loading="eager"
+            // durationFadeIn={200}
             backgroundColor="black"
           />
         </Phil>
