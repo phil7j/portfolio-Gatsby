@@ -26,7 +26,7 @@ const Image = (file) => {
     }
   `)
 
-  return <Img durationFadeIn={200} fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img durationFadeIn={200} backgroundColor="black" fluid={data.placeholderImage.childImageSharp.fluid} />
 }
 
 export default Image
