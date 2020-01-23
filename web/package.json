@@ -5,11 +5,13 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^2.1.0",
     "@material-ui/core": "^4.8.2",
     "@material-ui/icons": "^4.5.1",
     "@material-ui/styles": "^4.8.2",
     "babel-plugin-styled-components": "^1.10.6",
     "dotenv": "^8.2.0",
+    "env-cmd": "^10.0.1",
     "gatsby": "^2.18.12",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-manifest": "^2.2.31",
@@ -38,7 +40,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "env-cmd --file .env.development --fallback gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
