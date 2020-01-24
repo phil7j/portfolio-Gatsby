@@ -13,7 +13,7 @@ import Img from "gatsby-image"
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const Image = () => {
+const Image = (file) => {
   const data = useStaticQuery(graphql`
     query {
       placeholderImage: file(relativePath: { eq: "profile.jpeg" }) {
@@ -26,7 +26,7 @@ const Image = () => {
     }
   `)
 
-  return <Img durationFadeIn={2000} fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img backgroundColor="black" fluid={data.placeholderImage.childImageSharp.fluid} />
 }
 
 export default Image
