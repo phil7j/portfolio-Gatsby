@@ -18,7 +18,7 @@ import {
 
 const SecondPage = () => {
   const data = useStaticQuery(graphql`
-    query MyQuery {
+    query GetPhilPhoto2 {
       file(relativePath: { eq: "hiking.jpg" }) {
         childImageSharp {
           fluid {
@@ -32,15 +32,28 @@ const SecondPage = () => {
     <>
       <SEO title="About" />
       <Main>
+        <FirstSection>
+            <Description>
+              <h3>Philip Johnson</h3>
+              <p>
+                Software Engineer, traveler, soccer aficionado, coffee junkie,
+                family man, with a love for learning new tech and skills.
+              </p>
+              {/* <p></p> */}
+            </Description>
+          <Phil>
+            <Img
+              fluid={data.file.childImageSharp.fluid}
+              alt="Me hiking through the Swiss Alps"
+              // loading="eager"
+              // durationFadeIn={200}
+              backgroundColor="black"
+              />
+          </Phil>
+        </FirstSection>
         <Skills>
-          <Description>
-            <p>
-              Software Engineer, traveler, soccer aficionado, coffee junkie,
-              family man, with a love for learning new tech and skills.
-            </p>
-            {/* <p></p> */}
-          </Description>
-          <Tech>
+        <Tech>
+          <h3>Skills</h3>
             <div className="tech-section">
               <h4>Frontend</h4>
               <TechList>
@@ -89,22 +102,13 @@ const SecondPage = () => {
                 <p>Git</p>
               </div>
               <div class="tech-item">
-                <Github color="#181717" size={28} />
+                <Github color="#a9a9a9" size={28} />
                 <p>Github</p>
               </div>
               </TechList>
             </div>
           </Tech>
-        </Skills>
-        <Phil>
-          <Img
-            fluid={data.file.childImageSharp.fluid}
-            alt="Me hiking through the Swiss Alps"
-            // loading="eager"
-            // durationFadeIn={200}
-            backgroundColor="black"
-          />
-        </Phil>
+      </Skills>
       </Main>
     </>
   )
@@ -112,46 +116,65 @@ const SecondPage = () => {
 
 const Main = styled.div`
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  /* justify-content: space-evenly; */
+  flex-direction: column;
+  /* align-items: center; */
   min-height: 100%;
-  margin: 7rem;
+  margin: 4rem;
   /* border: 1px solid yellowgreen; */
   @media (max-width: 970px) {
-    flex-direction: column;
     margin: 0;
-    margin-top: 15%;
+    margin-top: 5%;
   }
 `
-
+const FirstSection = styled.section`
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+/* background: red; */
+@media (max-width: 970px) {
+  flex-direction: column;
+  }
+`
 const Phil = styled.div`
   max-width: 600px;
   min-width: 400px;
   @media (max-width: 600px) {
     min-width: 270px;
     order: -1;
+    img {
+      margin-bottom: 0;
+    }
   }
 `
 const Tech = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   margin-top: 40px;
   /* border: 1px solid blue; */
+  h3 {
+    display: block;
+    margin: 20px;
+    font-size: 40px;
+    font-family: "Glacial Regular", sans-serif;
+  }
   div.tech-section {
     margin: 5px;
-    width: 45%;
+    max-width: 450px;
     /* background: white; */
     padding: 10px;
     /* border-radius: 35px; */
-    border: 1px solid white;
+    border: 1px solid #ffffff26;
     h4 {
       text-align: center;
       /* color: black; */
     }
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 970px) {
     flex-direction: column;
+    margin-top: 1px;
     div.tech-section {
       width: 100%;
 
@@ -183,7 +206,8 @@ align-items: center;
 
 
 const Description = styled.div`
-  /* border: 1px solid green; */
+  height: 100%;
+
   p {
     margin: auto;
     font-family: "Glacial Regular", sans-serif;
@@ -203,9 +227,11 @@ const Description = styled.div`
     }
   }
   h3 {
-    font-family: "Open Sans Regular", sans-serif;
+    font-family: "Glacial Regular", sans-serif;
     text-align: center;
-    font-size: 26.5px;
+    font-size: 40px;
+    color: white;
+    margin-bottom: 40px;
     @media (max-width: 600px) {
       /* margin-top: 20px; */
       font-size: 15px;
