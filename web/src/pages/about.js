@@ -4,6 +4,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 import Img from "gatsby-image"
 import SEO from "../components/seo"
 import { useStaticQuery, graphql } from "gatsby"
+import PlayArrowIcon from "@material-ui/icons/PlayArrow"
 import {
   ReactJs,
   Sass,
@@ -107,6 +108,15 @@ const SecondPage = () => {
               </div>
               </TechList>
             </div>
+            <div className="tech-section">
+            <AniLink cover duration={0.7} bg="#2d2d2d" direction="down" to="/projects">
+            <button>
+              <p>Projects</p>
+              <ArrowIcon />
+            </button>
+        </AniLink>
+
+            </div>
           </Tech>
       </Skills>
       </Main>
@@ -120,7 +130,7 @@ const Main = styled.div`
   flex-direction: column;
   /* align-items: center; */
   min-height: 100%;
-  margin: 4rem;
+  margin: 2rem;
   /* border: 1px solid yellowgreen; */
   @media (max-width: 970px) {
     margin: 0;
@@ -153,9 +163,11 @@ const Tech = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 40px;
+  /* align-items: stretch; */
+  min-height: 123px;
   /* border: 1px solid blue; */
   h3 {
-    display: block;
+    /* display: block; */
     margin: 20px;
     font-size: 40px;
     font-family: "Glacial Regular", sans-serif;
@@ -167,10 +179,67 @@ const Tech = styled.div`
     padding: 10px;
     /* border-radius: 35px; */
     border: 1px solid #ffffff26;
+    background: #252525;
     h4 {
       text-align: center;
       /* color: black; */
     }
+  }
+  .tech-section:nth-of-type(2) {
+  background: #303030;
+}
+.tech-section:nth-of-type(3) {
+  background: #3c3c3c;
+}
+.tech-section:nth-of-type(4) {
+  background: #ffffff26;
+  display: flex;
+  flex: 1;
+  padding: 0;
+  max-width: 200px;
+  align-items: stretch;
+  @media (max-width: 970px) {
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+}
+a {
+  display: flex;
+  height: 100%;
+
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+
+}
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Open Sans Bold", sans-serif;
+    font-size: 14px;
+    width: 100%;
+    min-height: 145px;
+    background: #ffffff57;
+    border: 1px solid #ffffff26;
+    /* margin: 5px; */
+    color: white;
+    transition: color 0.5s ease, background 0.5s ease;
+    p {
+      margin: 0;
+      padding: 0;
+    }
+    &:hover {
+      cursor: pointer;
+      color: black;
+      background: white;
+      border: 1px solid white;
+      svg {
+        color: black;
+      }
+    }
+
+  }
   }
   @media (max-width: 970px) {
     flex-direction: column;
@@ -247,32 +316,6 @@ const Skills = styled.div`
   a {
     text-decoration: none;
   }
-  button {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    font-family: "Open Sans Bold", sans-serif;
-    font-size: 14px;
-    width: 140px;
-    height: 50px;
-    background: white;
-    border: none;
-    margin-top: 20px;
-    transition: color 0.5s ease, background 0.5s ease;
-    p {
-      margin: 0;
-      padding: 0;
-    }
-    &:hover {
-      cursor: pointer;
-      color: white;
-      background: black;
-      border: 1px solid white;
-      svg {
-        color: white;
-      }
-    }
-  }
   @media (max-width: 970px) {
     margin-top: 35px;
   }
@@ -284,9 +327,9 @@ const Skills = styled.div`
     margin-top: 15px;
   }
 `
-// const ArrowIcon = styled(PlayArrowIcon)`
-//   color: black;
-//   font-size: 40px;
-// `
+const ArrowIcon = styled(PlayArrowIcon)`
+  color: white;
+  font-size: 40px;
+`
 
 export default SecondPage
