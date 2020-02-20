@@ -34,14 +34,14 @@ const SecondPage = () => {
       <SEO title="About" />
       <Main>
         <FirstSection>
-            <Description>
-              <h3>Philip Johnson</h3>
-              <p>
-                Software Engineer, traveler, soccer aficionado, coffee junkie,
-                family man, with a love for learning new tech and skills.
-              </p>
-              {/* <p></p> */}
-            </Description>
+          <Description>
+            <h3>Philip Johnson</h3>
+            <p>
+              Software Engineer, traveler, soccer aficionado, coffee junkie,
+              family man, with a love for learning new tech and skills.
+            </p>
+            {/* <p></p> */}
+          </Description>
           <Phil>
             <Img
               fluid={data.file.childImageSharp.fluid}
@@ -49,76 +49,80 @@ const SecondPage = () => {
               // loading="eager"
               // durationFadeIn={200}
               backgroundColor="black"
-              />
+            />
           </Phil>
         </FirstSection>
         <Skills>
-        <Tech>
-          <h3>Skills</h3>
+          <Tech>
+            <h3>Skills</h3>
             <div className="tech-section">
               <h4>Frontend</h4>
               <TechList>
-              <div class="tech-item">
-                <ReactJs color="#61DAFB" size={28} />
-                <p>React</p>
-              </div>
-              <div class="tech-item">
-                <Redux color="#764ABC" size={28} />
-                <p>Redux</p>
-              </div>
-              <div class="tech-item">
-                <Sass color="#CC6699" size={28} />
-                <p>SASS</p>
-              </div>
-              <div class="tech-item">
-                <Javascript color="#F7DF1E" size={28} />
-                <p>Javascript</p>
-              </div>
-
+                <div className="tech-item">
+                  <ReactJs color="#61DAFB" size={28} />
+                  <p>React</p>
+                </div>
+                <div className="tech-item">
+                  <Redux color="#764ABC" size={28} />
+                  <p>Redux</p>
+                </div>
+                <div className="tech-item">
+                  <Sass color="#CC6699" size={28} />
+                  <p>SASS</p>
+                </div>
+                <div className="tech-item">
+                  <Javascript color="#F7DF1E" size={28} />
+                  <p>Javascript</p>
+                </div>
               </TechList>
             </div>
             <div className="tech-section">
               <h4>Backend</h4>
               <TechList>
-              <div class="tech-item">
-                <NodeDotJs color="#339933" size={28} />
-                <p>Node.js</p>
-              </div>
-              <div class="tech-item">
-                <Postgresql color="#336791" size={28} />
-                <p>PostgreSQL</p>
-              </div>
-              <div class="tech-item">
-                <Python color="#3776AB" size={28} />
-                <p>Python</p>
-              </div>
+                <div className="tech-item">
+                  <NodeDotJs color="#339933" size={28} />
+                  <p>Node.js</p>
+                </div>
+                <div className="tech-item">
+                  <Postgresql color="#336791" size={28} />
+                  <p>PostgreSQL</p>
+                </div>
+                <div className="tech-item">
+                  <Python color="#3776AB" size={28} />
+                  <p>Python</p>
+                </div>
               </TechList>
             </div>
 
             <div className="tech-section">
               <h4>Collaboration</h4>
               <TechList>
-              <div class="tech-item">
-                <Git color="#F05032" size={28} />
-                <p>Git</p>
-              </div>
-              <div class="tech-item">
-                <Github color="#a9a9a9" size={28} />
-                <p>Github</p>
-              </div>
+                <div className="tech-item">
+                  <Git color="#F05032" size={28} />
+                  <p>Git</p>
+                </div>
+                <div className="tech-item">
+                  <Github color="#a9a9a9" size={28} />
+                  <p>Github</p>
+                </div>
               </TechList>
             </div>
             <div className="tech-section">
-            <AniLink cover duration={0.7} bg="#2d2d2d" direction="down" to="/projects">
-            <button>
-              <p>Projects</p>
-              <ArrowIcon />
-            </button>
-        </AniLink>
-
+              <AniLink
+                cover
+                duration={0.7}
+                bg="#2d2d2d"
+                direction="down"
+                to="/projects"
+              >
+                <button>
+                  <p>Projects</p>
+                  <ArrowIcon />
+                </button>
+              </AniLink>
             </div>
           </Tech>
-      </Skills>
+        </Skills>
       </Main>
     </>
   )
@@ -138,12 +142,12 @@ const Main = styled.div`
   }
 `
 const FirstSection = styled.section`
-display: flex;
-justify-content: space-evenly;
-align-items: center;
-/* background: red; */
-@media (max-width: 970px) {
-  flex-direction: column;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  /* background: red; */
+  @media (max-width: 970px) {
+    flex-direction: column;
   }
 `
 const Phil = styled.div`
@@ -240,7 +244,6 @@ button {
     }
 
   }
-  }
   @media (max-width: 970px) {
     flex-direction: column;
     margin-top: 1px;
@@ -251,28 +254,26 @@ button {
   }
 `
 const TechList = styled.div`
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
- div.tech-item {
-
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin: 10px;
-   p {
-    font-family: "Open Sans Regular", sans-serif;
-    margin-bottom: 0;
-    /* color: black; */
-   }
- }
- svg {
-   margin: 2px;
- }
+  div.tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    p {
+      font-family: "Open Sans Regular", sans-serif;
+      margin-bottom: 0;
+      /* color: black; */
+    }
+  }
+  svg {
+    margin: 2px;
+  }
 `
-
 
 const Description = styled.div`
   height: 100%;
