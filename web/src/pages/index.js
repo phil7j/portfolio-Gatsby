@@ -1,16 +1,35 @@
 import React from "react"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
-import Image from "../components/image"
+import Img from "gatsby-image"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import PlayArrowIcon from "@material-ui/icons/PlayArrow"
+import { useStaticQuery, graphql } from "gatsby"
 
-const IndexPage = () => (
+const IndexPage = () => {
+  const data = useStaticQuery(graphql`
+  query GetPhilPhoto {
+    file(relativePath: { eq: "profile.jpeg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`)
+return (
   <>
     <SEO title="Home" />
     <Main>
       <Phil>
-        <Image />
+      <Img
+            fluid={data.file.childImageSharp.fluid}
+            alt="Me hiking through the Swiss Alps"
+            // loading="eager"
+            // durationFadeIn={200}
+            backgroundColor="black"
+          />
       </Phil>
       <Headline>
         <h1>Philip Johnson</h1>
@@ -24,18 +43,18 @@ const IndexPage = () => (
       </Headline>
     </Main>
   </>
-)
+)}
 
 const Main = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   min-height: 100%;
-  margin: 10rem;
+  margin: 8rem;
   @media (max-width: 970px) {
     flex-direction: column;
     margin: 0;
-    margin-top: 15%;
+    margin-top: 5%;
   }
 `
 
