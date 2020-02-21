@@ -15,7 +15,7 @@ const Projects = () => {
           introText
           image {
             asset {
-              fluid(maxWidth: 200) {
+              fluid(maxWidth: 400) {
                 ...GatsbySanityImageFluid
               }
             }
@@ -30,14 +30,14 @@ const Projects = () => {
       <SEO title="Projects" />
       <h1 style={{ textAlign: "center", marginTop: "80px" }}>Coming Soon...</h1>
       <ProjectContainer>
-        {data.allSanityProject.nodes.map(node => (
-          <Project>
+        {data.allSanityProject.nodes.map((node, index) => (
+          <Project key={index}>
             <div>
             <h3>{node.name}</h3>
             <p>{node.introText}</p>
             </div>
-            <Img
-              style={{ width: "200px" }}
+            <ProjectImg
+
               fluid={node.image.asset.fluid}
               alt="Picture of this project"
               // loading="eager"
@@ -63,7 +63,7 @@ const Projects = () => {
 }
 
 const ProjectContainer = styled.article`
-  border: 1px solid red;
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,12 +72,20 @@ const ProjectContainer = styled.article`
 `
 
 const Project = styled.div`
-  border: 2px solid green;
+
   display: flex;
   height: 200px;
+  min-width: 654px;
+  background: #100f0f;
+  margin: 10px;
   p {
     font-size: 12px;
+    max-width: 350px;
   }
+`
+
+const ProjectImg = styled(Img)`
+width: 300px;
 `
 
 export default Projects
