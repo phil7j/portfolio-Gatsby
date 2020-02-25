@@ -13,6 +13,9 @@ const Projects = () => {
           name
           skills
           introText
+          slug {
+            current
+          }
           image {
             asset {
               fluid(maxWidth: 400) {
@@ -24,13 +27,21 @@ const Projects = () => {
       }
     }
   `)
-  console.log(data.allSanityProject.nodes)
+  // TODO: Style Projects Page. Make design look cleaner and more interesting.
   return (
     <>
       <SEO title="Projects" />
-      <h1 style={{ textAlign: "center", marginTop: "80px" }}>Coming Soon...</h1>
+      <h1 style={{ textAlign: "center", marginTop: "40px" }}>Projects</h1>
       <ProjectContainer>
         {data.allSanityProject.nodes.map((node, index) => (
+          <AniLink
+          cover
+          duration={0.7}
+          bg="#2d2d2d"
+          direction="down"
+          style={{ display: "block", textAlign: "center", marginTop: "80px" }}
+          to={"/projects/"+`${node.slug.current}`}
+        >
           <Project key={index}>
             <div>
             <h3>{node.name}</h3>
@@ -45,6 +56,7 @@ const Projects = () => {
               // backgroundColor="black"
             />
           </Project>
+          </AniLink>
         ))}
       </ProjectContainer>
 
@@ -65,22 +77,32 @@ const Projects = () => {
 const ProjectContainer = styled.article`
 
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* flex-wrap: wrap; */
+
+  justify-content: center;
+  flex-wrap: wrap;
   margin: 2rem;
 `
 
 const Project = styled.div`
-
   display: flex;
+  justify-content: space-between;
   height: 200px;
-  min-width: 654px;
-  background: #100f0f;
+  width: 550px;
+  background: #333333;
   margin: 10px;
+  transition: all .3s ease;
+  border: 2px solid #333333;
+  color: white;
+  text-decoration: none;
+  div {
+    padding: 15px;
   p {
     font-size: 12px;
     max-width: 350px;
+  }
+  }
+  &:hover {
+    box-shadow: 0px 0px 55px 43px rgba(77,77,77,1);
   }
 `
 
