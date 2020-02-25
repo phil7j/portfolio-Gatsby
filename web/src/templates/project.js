@@ -12,6 +12,9 @@ export const query = graphql`
           }
     }
 `
+// Todo: Pull more data from API and style it
+// Learn how to render rich text
+
 const Project = (props) => {
     return (
         <>
