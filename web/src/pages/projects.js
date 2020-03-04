@@ -102,7 +102,7 @@ const Project = styled.div`
   }
   }
   &:hover {
-    box-shadow: 0px 0px 55px 43px rgba(77,77,77,1);
+    box-shadow: 0px 0px 90px 55px rgba(77,77,77,1);
   }
 `
 
