@@ -31,7 +31,7 @@ const Project = (props) => {
     },[])
     return (
         <>
-        <SEO title="Project Page" />
+        <SEO title={props.data.sanityProject.name} />
         <MainInfo>
         <Section1>
         <h2>{props.data.sanityProject.name}</h2>
