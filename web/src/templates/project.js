@@ -3,7 +3,7 @@ import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import styled from 'styled-components'
 import Img from "gatsby-image"
-
+import BlockContent from '@sanity/block-content-to-react'
 
 export const query = graphql`
 query($slug: String!) {
@@ -11,6 +11,7 @@ query($slug: String!) {
         name
         introText
         skills
+        _rawDescription
         image {
           asset {
             fixed(width:400) {
@@ -48,9 +49,20 @@ const Project = (props) => {
         </TechItems>
         </Section2>
         </MainInfo>
+        <Description>
+            <BlockContent blocks={props.data.sanityProject._rawDescription}/>
+        </Description>
         </>
     )
 }
+const Description = styled.article`
+ /* width: 100%; */
+ background: #544343;
+ padding: 40px;
+ max-width: 800px;
+ margin: 0 auto 40px auto;
+ font-family: "Glacial Regular";
+`
 
 const MainInfo = styled.div`
 font-family: "Glacial Regular";
@@ -58,7 +70,7 @@ display: flex;
 flex-wrap: wrap;
 max-width: 1200px;
 justify-content: center;
-margin: 3rem auto;
+margin: 3rem auto 0 auto;
 /* border: 1px solid red; */
 padding: 20px;
 `
