@@ -70,6 +70,7 @@ const Project = styled.div`
 const ProjectImg = styled(Img)`
   /* display: block!important; */
   min-height: 205px;
+
 `
 
 export default ProjectItem

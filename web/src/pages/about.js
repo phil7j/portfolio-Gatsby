@@ -177,7 +177,7 @@ const Tech = styled.div`
     font-family: "Glacial Regular", sans-serif;
   }
   div.tech-section {
-    margin: 5px;
+    /* margin: 5px; */
     max-width: 450px;
     /* background: white; */
     padding: 10px;
@@ -190,10 +190,10 @@ const Tech = styled.div`
     }
   }
   .tech-section:nth-of-type(2) {
-  background: #303030;
+  background: #3a3939;
 }
 .tech-section:nth-of-type(3) {
-  background: #3c3c3c;
+  background: #4a4949;
 }
 .tech-section:nth-of-type(4) {
   background: #ffffff26;
@@ -282,29 +282,28 @@ const Description = styled.div`
     margin: auto;
     font-family: "Glacial Regular", sans-serif;
     max-width: 380px;
+    @media (max-width: 970px) {
+    margin-bottom: 20px;
+    /* margin-top: 20px; */
+
+
+  }
     @media (max-width: 600px) {
       width: 100%;
-      margin: 5px;
+      padding: 25px;
+      margin-bottom: 0;
     }
   }
-  h1 {
-    font-family: "Glacial Regular", sans-serif;
-    font-size: 51px;
-    text-align: center;
-    @media (max-width: 600px) {
-      margin-top: 20px;
-      font-size: 35px;
-    }
-  }
+
   h3 {
     font-family: "Glacial Regular", sans-serif;
     text-align: center;
     font-size: 40px;
     color: white;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     @media (max-width: 600px) {
-      /* margin-top: 20px; */
-      font-size: 15px;
+      margin-top: 20px;
+      font-size: 20px;
     }
   }
 `
