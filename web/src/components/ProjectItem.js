@@ -11,8 +11,7 @@ const ProjectItem = props => {
           duration={0.7}
           bg="#2d2d2d"
           direction="down"
-
-          to={"/projects/" + `${props.slug}`}
+          to={`/projects/${props.slug}`}
         >
           <Project>
             <ProjectImg

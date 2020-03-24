@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import styled from 'styled-components'
@@ -22,14 +22,9 @@ query($slug: String!) {
         }
       }
 `
-// Todo: Pull more data from API and style it
-// Learn how to render rich text
 
 const Project = (props) => {
-    useEffect(()=>{
-    console.log("PROPS===>", props)
-    console.log("IMAGE URL====>", props.data.sanityProject.image.asset.fixed.src)
-    },[])
+
     return (
         <>
         <SEO title={props.data.sanityProject.name} />

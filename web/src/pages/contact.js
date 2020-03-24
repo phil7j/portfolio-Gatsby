@@ -1,13 +1,29 @@
 import React from "react"
-import AniLink from "gatsby-plugin-transition-link/AniLink"
+import styled from 'styled-components'
 import SEO from "../components/seo"
+import MyForm from "../components/MyForm"
+
 
 const Contact = () => (
   <>
     <SEO title="Contact" />
-    <h1 style={{textAlign: "center", marginTop: "80px"}}>Coming Soon...</h1>
-    <AniLink cover duration={0.7} bg="#2d2d2d" direction="down" style={{display: "block", textAlign: "center", marginTop: "80px"}} to="/">Go back to the homepage</AniLink>
+    <Container>
+      <h3>Comments or inqueries?</h3>
+      <MyForm />
+    </Container>
   </>
 )
+
+const Container = styled.article`
+display: flex;
+flex-direction: column;
+align-items: center;
+h3 {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto;
+  font-weight: 100;
+  margin-top: 50px;
+  padding: 10px;
+}
+`
 
 export default Contact
