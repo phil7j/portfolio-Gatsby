@@ -106,6 +106,7 @@ const Headline = styled.div`
     p {
       margin: 0;
       padding: 0;
+
     }
     &:hover {
       cursor: pointer;
@@ -121,16 +122,21 @@ const Headline = styled.div`
     margin-top: 35px;
   }
   @media (max-width: 600px) {
-    /* margin-top: 20px; */
     width: 100%;
   }
   @media (max-width: 400px) {
     margin-top: 15px;
+    p {
+      font-size: 12px;
+    }
   }
 `
 const ArrowIcon = styled(PlayArrowIcon)`
   color: black;
   font-size: 40px;
+  @media (max-width: 400px) {
+    font-size: 30px;
+  }
 `
 
 export default IndexPage
