@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-import { Ellipsis } from "react-awesome-spinners"
 import CircularProgress from '@material-ui/core/CircularProgress';
 import DoneOutlineIcon from "@material-ui/icons/DoneOutline"
 
