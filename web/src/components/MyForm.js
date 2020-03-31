@@ -111,7 +111,8 @@ outline: none;
 border: none;
 
 &:hover {
-    background-color: grey;
+    background-color: #000000b8;
+    color: white;
 }
 `
 

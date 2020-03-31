@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react"
+import React, {useState} from "react"
 import styled from "styled-components"
 import MenuIcon from '@material-ui/icons/Menu';
 import AniLink from "gatsby-plugin-transition-link/AniLink"
@@ -6,9 +6,7 @@ import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Header = () => {
   let [open, setOpen] = useState(false)
-  useEffect(()=>{
-    console.log("Is it open?", open)
-  },[open])
+
   return (
   <>
   <Container>
