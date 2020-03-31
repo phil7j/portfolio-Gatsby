@@ -34,7 +34,7 @@ const Projects = () => {
       <div style={{display: "flex", justifyContent: "center"}}>
       <ProjectContainer>
         {data.allSanityProject.nodes.map((node, index) => (
-          <ProjectItem slug={node.slug.current} image={node.image.asset.fixed} name={node.name} key={node.slug.current}/>
+          <ProjectItem slug={node.slug.current} image={node.image.asset ? node.image.asset.fixed : null} name={node.name} key={node.slug.current}/>
           ))}
       </ProjectContainer>
       </div>

@@ -14,10 +14,10 @@ import {
   Python,
   Git,
   Github,
-  Redux,
+  Redux
 } from "@icons-pack/react-simple-icons"
 
-const SecondPage = () => {
+const About = () => {
   const data = useStaticQuery(graphql`
     query GetPhilPhoto2 {
       file(relativePath: { eq: "hiking.jpg" }) {
@@ -41,6 +41,7 @@ const SecondPage = () => {
               family man, with a love for learning new tech and skills.
             </p>
             {/* <p></p> */}
+
           </Description>
           <Phil>
             <Img
@@ -332,4 +333,4 @@ const ArrowIcon = styled(PlayArrowIcon)`
   font-size: 40px;
 `
 
-export default SecondPage
+export default About
