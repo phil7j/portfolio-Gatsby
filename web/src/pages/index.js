@@ -12,7 +12,7 @@ const IndexPage = () => {
     file(relativePath: { eq: "profile.jpeg" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid
+          ...GatsbyImageSharpFluid_noBase64
         }
       }
     }
