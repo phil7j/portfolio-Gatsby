@@ -23,7 +23,7 @@ const About = () => {
       file(relativePath: { eq: "hiking.jpg" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_noBase64
           }
         }
       }
