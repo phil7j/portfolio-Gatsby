@@ -17,7 +17,7 @@ const Projects = () => {
           image {
             asset {
               fixed(width: 300) {
-                ...GatsbySanityImageFixed_noBase64
+                ...GatsbySanityImageFixed
               }
             }
           }

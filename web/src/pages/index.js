@@ -11,8 +11,8 @@ const IndexPage = () => {
   query GetPhilPhoto {
     file(relativePath: { eq: "profile.jpeg" }) {
       childImageSharp {
-        fluid(quality: 30) {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
         }
       }
     }
@@ -26,8 +26,9 @@ return (
       <Img
             fluid={data.file.childImageSharp.fluid}
             alt="Me hiking through the Swiss Alps"
-            durationFadeIn={1000}
-            backgroundColor={true}
+            durationFadeIn={2000}
+            placeholderStyle={{filter: "blur(20px)"}}
+
           />
       </Phil>
       <Headline>

@@ -19,9 +19,7 @@ const ProjectItem = props => {
               fixed={props.image}
               alt="Picture of this project"
               objectPosition="0"
-              // loading="eager"
-              // durationFadeIn={200}
-              backgroundColor={true}
+              placeholderStyle={{filter: "blur(20px)"}}
             />
           ) : (
             <DefaultImg>Add Screenshot In Sanity</DefaultImg>
@@ -57,14 +55,13 @@ const Project = styled.div`
   flex-direction: column;
   justify-content: space-around;
   min-height: 240px;
-  /* width: 100%; */
-  /* background: #333333; */
   margin: 10px;
   color: white;
   h3 {
     font-size: 25px;
     font-family: "Glacial Regular";
     margin-bottom: 10px;
+    margin-top: 15px;
   }
 `
 

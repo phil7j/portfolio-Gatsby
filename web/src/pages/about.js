@@ -23,7 +23,7 @@ const About = () => {
       file(relativePath: { eq: "hiking.jpg" }) {
         childImageSharp {
           fluid {
-            ...GatsbyImageSharpFluid_noBase64
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -47,9 +47,8 @@ const About = () => {
             <Img
               fluid={data.file.childImageSharp.fluid}
               alt="Me hiking through the Swiss Alps"
-              // loading="eager"
-              // durationFadeIn={200}
-              backgroundColor="black"
+              durationFadeIn={2000}
+              placeholderStyle={{filter: "blur(20px)"}}
             />
           </Phil>
         </FirstSection>
